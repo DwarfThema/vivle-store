@@ -11,7 +11,11 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import axios from "axios";
-import MainModal from "./components/mainModal";
+import { CardMedia } from "@mui/material";
+import Link from "next/link";
+import styled from "styled-components";
+
+const UrlLink = styled.a``;
 
 const Home: NextPage = () => {
   const [assets, setAssets] = useState([]);
@@ -67,7 +71,18 @@ const Home: NextPage = () => {
                     flexDirection: "column",
                   }}
                 >
-                  <MainModal asset={asset} />
+                  <a href={asset.linkUrl} target="_blank">
+                    <CardMedia
+                      component="img"
+                      image={asset.photoUrl}
+                      sx={{
+                        height: "200px",
+                        display: "flex",
+                        justifyContent: "center",
+                        objectFit: "scale-down",
+                      }}
+                    />
+                  </a>
                   <CardContent
                     sx={{
                       flexGrow: 1,
