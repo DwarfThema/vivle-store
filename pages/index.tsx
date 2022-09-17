@@ -71,7 +71,11 @@ const Home: NextPage = () => {
                     flexDirection: "column",
                   }}
                 >
-                  <a href={asset.linkUrl} target="_blank">
+                  <a
+                    href={asset.linkUrl}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
                     <CardMedia
                       component="img"
                       image={asset.photoUrl}
