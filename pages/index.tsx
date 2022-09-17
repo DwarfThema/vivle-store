@@ -15,8 +15,6 @@ import { CardMedia } from "@mui/material";
 import Link from "next/link";
 import styled from "styled-components";
 
-const UrlLink = styled.a``;
-
 const Home: NextPage = () => {
   const [assets, setAssets] = useState([]);
 
@@ -63,7 +61,7 @@ const Home: NextPage = () => {
           {/* End hero unit */}
           <Grid container spacing={4}>
             {assets?.map((asset: any) => (
-              <Grid item key={asset.id} xs={12} sm={6} md={2}>
+              <Grid item key={asset?.id} xs={12} sm={6} md={2}>
                 <Card
                   sx={{
                     height: "100%",
@@ -72,13 +70,13 @@ const Home: NextPage = () => {
                   }}
                 >
                   <a
-                    href={asset.linkUrl}
+                    href={asset?.linkUrl}
                     rel="noopener noreferrer"
                     target="_blank"
                   >
                     <CardMedia
                       component="img"
-                      image={asset.photoUrl}
+                      image={asset?.photoUrl}
                       sx={{
                         height: "200px",
                         display: "flex",
@@ -100,7 +98,7 @@ const Home: NextPage = () => {
                         fontSize: 15,
                       }}
                     >
-                      {asset.assetName}
+                      {asset?.assetName}
                     </Typography>
                   </CardContent>
                 </Card>
