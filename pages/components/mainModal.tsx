@@ -24,7 +24,7 @@ export default function MainModal({ asset }: any) {
       <Button onClick={handleOpen}>
         <CardMedia
           component="img"
-          image={asset.photoUrl}
+          image={asset?.photoUrl}
           sx={{
             height: "200px",
             display: "flex",
@@ -42,7 +42,7 @@ export default function MainModal({ asset }: any) {
         <Box sx={boxStyle}>
           <CardMedia
             component="img"
-            image={asset.photoUrl}
+            image={asset?.photoUrl}
             sx={{
               height: "200px",
               display: "flex",
@@ -53,7 +53,7 @@ export default function MainModal({ asset }: any) {
           <Container>
             <CardMedia
               component="img"
-              image={asset.photoUrl}
+              image={asset?.photoUrl}
               sx={{
                 height: "200px",
                 display: "flex",
