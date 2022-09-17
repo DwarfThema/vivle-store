@@ -14,12 +14,13 @@ import axios from "axios";
 import { CardMedia } from "@mui/material";
 import Link from "next/link";
 import styled from "styled-components";
+import HeadMeta from "./components/HeadMeta";
 
 const Home: NextPage = () => {
   const [assets, setAssets] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://www.vivlepark.synology.me:8080/todb`).then((res) => {
+    axios.get(`https://www.vivlepark.synology.me:8080/todb`).then((res) => {
       const random = res.data.data.sort(() => Math.random() - 0.5);
       setAssets(random);
     });
@@ -27,6 +28,7 @@ const Home: NextPage = () => {
 
   return (
     <>
+      <HeadMeta />
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
